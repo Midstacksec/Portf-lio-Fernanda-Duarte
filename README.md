@@ -6,7 +6,7 @@ A ideia aqui não foi só montar um site bonito, mas criar algo com identidade v
 
 ---
 
-✨ O que tem aqui?
+O que tem aqui?
 
 * Usei Next.js 14 com App Router
 * TypeScript pra organização e tipagem
