@@ -1,4 +1,4 @@
-# 🟣 Midstacksec — Portfolio
+ 🟣 Midstacksec — Portfolio
 
 Portfólio pessoal desenvolvido com Next.js 14, TypeScript e CSS Modules.
 
