@@ -1,0 +1,8 @@
+.footer {
+  position: relative; z-index: 1;
+  text-align: center; padding: 2rem;
+  font-family: var(--font-mono), monospace; font-size: 0.7rem;
+  color: var(--purple-dim);
+  border-top: 1px solid rgba(124,58,237,0.1);
+  letter-spacing: 2px;
+}

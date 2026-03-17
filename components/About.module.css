@@ -1,0 +1,70 @@
+.about { position: relative; z-index: 1; }
+.inner {
+  max-width: 1100px; margin: 0 auto; padding: 6rem 2rem;
+  display: grid; grid-template-columns: 1.2fr 1fr 0.8fr;
+  gap: 3rem; align-items: center;
+}
+.label {
+  font-family: var(--font-mono), monospace; font-size: 0.72rem;
+  color: var(--purple); letter-spacing: 5px; margin-bottom: 0.5rem;
+}
+.title {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700;
+  color: var(--white); margin-bottom: 0.5rem;
+}
+.line {
+  width: 60px; height: 2px; background: var(--purple-bright);
+  margin-bottom: 2rem; box-shadow: 0 0 10px var(--purple-bright);
+}
+.text p { font-size: 1.05rem; line-height: 1.8; color: var(--grey); margin-bottom: 1rem; }
+.text p span { color: var(--purple-bright); font-weight: 600; }
+
+.skills { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+.skillItem {
+  background: rgba(124,58,237,0.08);
+  border: 1px solid rgba(124,58,237,0.2); border-radius: 6px;
+  padding: 0.7rem 0.9rem;
+  font-family: var(--font-mono), monospace; font-size: 0.75rem;
+  color: var(--purple-glow); display: flex; align-items: center; gap: 0.5rem;
+  transition: all 0.25s;
+}
+.skillItem:hover {
+  background: rgba(124,58,237,0.18); border-color: var(--purple-bright);
+  transform: translateY(-2px); box-shadow: 0 0 20px rgba(124,58,237,0.2);
+}
+.dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--purple-bright); box-shadow: 0 0 8px var(--purple-bright); flex-shrink: 0;
+}
+
+.photoWrap { display: flex; justify-content: center; align-items: flex-start; }
+.photoFrame {
+  position: relative; width: 220px; border-radius: 12px; overflow: hidden;
+  border: 2px solid var(--purple-dim);
+  box-shadow: 0 0 40px rgba(124,58,237,0.35), 0 0 80px rgba(124,58,237,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.photoFrame:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 60px rgba(168,85,247,0.5), 0 0 100px rgba(124,58,237,0.2);
+}
+.photo { width: 100%; height: auto; display: block; object-position: center top; }
+.photoOverlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 55%, rgba(124,58,237,0.25));
+  pointer-events: none;
+}
+.badge {
+  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+  font-family: var(--font-mono), monospace; font-size: 0.62rem; letter-spacing: 2px;
+  color: var(--purple-glow); background: rgba(5,5,10,0.85);
+  padding: 4px 10px; border-radius: 20px; border: 1px solid var(--purple-dim);
+  white-space: nowrap; z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .inner { grid-template-columns: 1fr; }
+  .photoWrap { order: -1; }
+  .photoFrame { width: 160px; }
+}

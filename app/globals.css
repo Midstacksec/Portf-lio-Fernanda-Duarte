@@ -1,0 +1,94 @@
+:root {
+  --black: #05050a;
+  --purple: #7c3aed;
+  --purple-bright: #a855f7;
+  --purple-glow: #c084fc;
+  --purple-dim: #3b1a6e;
+  --white: #f0eaff;
+  --grey: #8b7aa8;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+body::after {
+  content: '';
+  position: fixed; top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 2px,
+    rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px
+  );
+  pointer-events: none; z-index: 9000;
+}
+
+/* CURSOR */
+.cursor {
+  width: 12px; height: 12px;
+  background: var(--purple-bright);
+  border-radius: 50%;
+  position: fixed; top: 0; left: 0;
+  pointer-events: none; z-index: 9999;
+  box-shadow: 0 0 20px var(--purple-bright), 0 0 40px var(--purple);
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s;
+}
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 1px solid var(--purple-bright);
+  border-radius: 50%;
+  position: fixed; top: 0; left: 0;
+  pointer-events: none; z-index: 9998;
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease;
+}
+
+/* CANVAS */
+.bg-canvas {
+  position: fixed; top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 0; pointer-events: none;
+}
+
+/* REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes blink {
+  0%,49% { opacity: 1; } 50%,100% { opacity: 0; }
+}
+@keyframes scrollPulse {
+  0%,100% { opacity: 0.3; } 50% { opacity: 1; }
+}
+@keyframes glitch1 {
+  0%,90%,100% { transform: none; opacity: 1; }
+  91% { transform: translate(-4px, 2px); opacity: 0.8; }
+  93% { transform: translate(4px, -2px); }
+  95% { transform: translate(-2px, 1px); }
+}
+@keyframes glitch2 {
+  0%,88%,100% { transform: none; opacity: 1; }
+  89% { transform: translate(4px, 3px); opacity: 0.8; }
+  92% { transform: translate(-3px, -1px); }
+  94% { transform: translate(2px, 2px); }
+}
